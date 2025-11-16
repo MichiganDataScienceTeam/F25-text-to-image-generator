@@ -121,7 +121,7 @@ class CelebaCVAE(nn.Module):
 @st.cache_resource
 def load_models():
     # Hyperparameters
-    # TODO: change parameteres to the ones used in the training
+    # TODO: change parameters to the ones used in the training
     latent_size = 128 
     clip_dim = 512
     init_channels = 64 
@@ -129,7 +129,7 @@ def load_models():
     image_channels = 3
     
     model = CelebaCVAE(image_channels, init_channels, latent_size, clip_dim, image_size).to(device)
-    # TODO: make sure this path is corret (can also look like 'output/checkpoints/checkpoint_epoch_XX.pth')
+    # TODO: make sure this path is correct
     model_path = 'celeba_cvae_model.pth'
     
     if not os.path.exists(model_path):
@@ -153,7 +153,7 @@ def generate_faces(model, clip_model, text_prompt, num_samples=1, temperature=1.
         text_features = clip_model.encode_text(text)
     
     with torch.no_grad():
-        # TODO: Use your latent_size value for second parameter of torch.randn
+        # TODO: Use your latent_size value for the second parameter of torch.randn
         sample_z = torch.randn(num_samples, 128).to(device) * temperature
         text_condition = text_features.repeat(num_samples, 1)
         samples = model.decode(sample_z, text_condition).cpu()
