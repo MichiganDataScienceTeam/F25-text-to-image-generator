@@ -210,7 +210,6 @@ def main():
     text_prompt = st.text_input(
         "Enter a description for the face you want to generate:",
         value="smiling woman",
-        help="Describe the type of face you want to generate"
     )
     
     col1, col2, col3 = st.columns([1, 1, 1])
