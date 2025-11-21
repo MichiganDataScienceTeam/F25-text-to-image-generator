@@ -180,7 +180,7 @@ def tensor_to_pil_images(tensor):
 
 # Main App
 def main():
-    st.title("AI Image Generator")
+    st.title("Text to Image Generator")
     
     # chat history in session state
     if 'chat_history' not in st.session_state:
