@@ -181,7 +181,6 @@ def tensor_to_pil_images(tensor):
 # Main App
 def main():
     st.title("AI Image Generator")
-    st.markdown("Generate realistic faces using text descriptions powered by CVAE + CLIP")
     
     # chat history in session state
     if 'chat_history' not in st.session_state:
